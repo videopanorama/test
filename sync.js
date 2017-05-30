@@ -1,4 +1,4 @@
-var loggingEnabled = true;
+var loggingEnabled = false;
 
 
 
@@ -32,7 +32,8 @@ var loggingEnabled = true;
             $("#bufferInfo").html("Every player has buffered now, but there was a timeupdate, pause, ... event...");
         });
         $(document).on("sjs:masterTimeupdate", function(event, param) {
-            $("#currentTime").html(param);
+            var rounded = Math.round(param *10)/10;
+            $("#currentTime").html(rounded);
         });
 
         // $.synchronizeVideos(0, videoId1, videoId2, videoId3);

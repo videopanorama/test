@@ -12,30 +12,38 @@
     <script src="sync.js"></script>
     <style>
     .space-0 {
-        padding-right: 0;
-        padding-left: 0;
-        margin-left: 0;
-        margin-right: 0;
+        padding: 0;
+        margin: 0;
     }
-    
+
+    body{
+        height:100%;
+    }
+
+
 
 
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row hidden-xs" id="videos">
-            <div class="col-sm-3 space-0">
-                <video mediagroup="main" id="0" class="video-js" width="292.5" height="144" preload="auto" controls>
-                    <source src="timer2.mp4">
-                </video>
-            </div>
+    <div class="container hidden-xs">
+        <div class="row" id="videos">
+           <!-- videos here! -->
         </div>
-        <div class="row visible-xs">
-        Your browser window is too small
+        <div class="row" id="controls">
+        <button id="buttonPlay" type="button" class="col-sm-4 glyphicon glyphicon-play"></button>
+        <button id="buttonPause" type="button" class="col-sm-4 glyphicon glyphicon-pause"></button>
+        <button id="buttonResetVideo" type="button" class="col-sm-4 glyphicon glyphicon-repeat"></button>
+        </div>
+        <div class="row" id="info">
+        <span id="currentTime" class="col-sm-12 text-center"></span>
+        <span id="bufferInfo" class="col-sm-12 text-center"></span>
         </div>
     </div>
+    <span class="visible-xs">
+    Your browser window is too small.
+    </span>
 </body>
 
 </html>
