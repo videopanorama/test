@@ -11,30 +11,31 @@
     <script src="sync/src/synchronize.js"></script>
     <script src="sync.js"></script>
     <style>
-    .space-0{
-    padding-right:0;
-    padding-left:0;
-    margin-left:0;
-    margin-right:0;
-}
+    .space-0 {
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
     
-    .vjs-seeking .vjs-loading-spinner,.vjs-waiting .vjs-loading-spinner{
-  display: none;
-}
 
 
-</style>
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row" id="videos">
-        <div class="col-lg-3 space-0">
-        <video mediagroup="main" id="0" class="video-js" width="292.5" height="144" preload="auto" controls>
-            <source src="timer2.mp4">
-        </video>
+        <div class="row hidden-xs" id="videos">
+            <div class="col-sm-3 space-0">
+                <video mediagroup="main" id="0" class="video-js" width="292.5" height="144" preload="auto" controls>
+                    <source src="timer2.mp4">
+                </video>
+            </div>
         </div>
+        <div class="row visible-xs">
+        Your browser window is too small
         </div>
     </div>
 </body>
+
 </html>
