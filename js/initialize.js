@@ -50,7 +50,7 @@ function vidUpdate(x,y) {
 
 	tileUpdate(update);
 	$(document).trigger("sjs:setCurrentTime", [timeBefore]);
-	$(document).trigger("sjs:play");
+	$(document).trigger("sjs:play", []);
 }
 
 //pan buttons

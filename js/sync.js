@@ -30,6 +30,7 @@ var loggingEnabled = false;
         });
         $(document).on("sjs:bufferedButNotAutoplaying", function(event) {
             $("#bufferInfo").html("Every player has buffered now, but there was a timeupdate, pause, ... event...");
+            $(document).trigger("sjs:play", []);
         });
         $(document).on("sjs:masterTimeupdate", function(event, param) {
             var rounded = Math.round(param *10)/10;
