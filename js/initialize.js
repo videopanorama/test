@@ -1,11 +1,11 @@
 template = 'test';
 
+//a general tileUpdate
+
 var xtiles = 2;
 var ytiles = 2;
 var xstart = 3;
 var ystart = 1;
-
-//a general tileUpdate
 
 function tileUpdate(operation) {
 	tile = 0;
@@ -32,17 +32,28 @@ $(document).ready(function() {
 
 //update
 
+var time;
+
 function update() {
 	var video = videojs(tile.toString());
 	video.src('seafront/' + (ytile + ystart) + '_' + (xtile + xstart) + '.mp4');
 }
 
 function vidUpdate(x,y) {
+	timeBefore = time;
 	xstart += x;
 	ystart += y;
+
+	
+
+	//alert(time);
+
 	tileUpdate(update);
+	$(document).trigger("sjs:setCurrentTime", [timeBefore]);
+	$(document).trigger("sjs:play");
 }
 
+//pan buttons
 
 $(document).ready(function() {
   

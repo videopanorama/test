@@ -33,6 +33,7 @@ var loggingEnabled = false;
         });
         $(document).on("sjs:masterTimeupdate", function(event, param) {
             var rounded = Math.round(param *10)/10;
+            time = param;
             $("#currentTime").html(rounded);
         });
 
