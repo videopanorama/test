@@ -1,7 +1,7 @@
 var loggingEnabled = false;
 
 
-
+vidUpdate();
 
 (function($) {
     videoId1 = "0";
@@ -36,6 +36,7 @@ var loggingEnabled = false;
             $("#currentTime").html(rounded);
         });
 
+
         // $.synchronizeVideos(0, videoId1, videoId2, videoId3);
         $(document).trigger("sjs:debug", loggingEnabled);
         $.synchronizeVideos(0, mediagroupId);
@@ -44,3 +45,4 @@ var loggingEnabled = false;
 
     });
 })(jQuery);
+
