@@ -1,3 +1,7 @@
+
+
+
+
 /**
  * Synchronize.js
  * Version 1.2.6
@@ -62,6 +66,12 @@
     var usingFlash = false;
 
     $.synchronizeVideos = synchronizeVideos;
+
+    $(document).on("getIds", function() {
+        console.log(videoIds);
+        console.log(videoIdsInit);
+        console.log(masterVideoId);
+    });
 
     function log(vals) {
         if (debug && window.console) {
@@ -287,7 +297,7 @@
                 return getVideo(id).paused;
             } else {
                 if (id === masterVideoId) {
-                    console.error('IS PAUSED', getVideo(id).paused());
+                    //console.error('IS PAUSED', getVideo(id).paused());
                 }
                 return getVideo(id).paused();
             }
