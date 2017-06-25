@@ -1,7 +1,3 @@
-
-
-
-
 /**
  * Synchronize.js
  * Version 1.2.6
@@ -66,12 +62,6 @@
     var usingFlash = false;
 
     $.synchronizeVideos = synchronizeVideos;
-
-    $(document).on("getIds", function() {
-        console.log(videoIds);
-        console.log(videoIdsInit);
-        console.log(masterVideoId);
-    });
 
     function log(vals) {
         if (debug && window.console) {
