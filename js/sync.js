@@ -40,6 +40,7 @@ var loggingEnabled = false;
 
         // $.synchronizeVideos(0, videoId1, videoId2, videoId3);
         $(document).trigger("sjs:debug", loggingEnabled);
+        $(document).trigger("sjs:stopBufferChecker");
         $.synchronizeVideos(0, mediagroupId);
 
         

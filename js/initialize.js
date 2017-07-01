@@ -6,8 +6,8 @@ var xtiles = 3;
 var ytiles = 3;
 var xstart = 3;
 var ystart = 1;
-var xmax = 7;
-var ymax = 3;
+var xmax = 8;
+var ymax = 4;
 
 
 
@@ -24,7 +24,7 @@ function tileUpdate(operation) {
 //initialize
 
 function initialize() {
-    $("#videos").append('<div class="col-sm-4 space-0"><video width="392" mediagroup="main" id="' + tile + '" class="video-js"></video></div>');
+    $("#videos").append('<div class="col-sm-4 space-0 video"><video width="390" mediagroup="main" id="' + tile + '" class="video-js"></video></div>');
     videojs(tile.toString(), { loop: true, loadingSpinner: false });
     var video = videojs(tile.toString());
     video.src('https://videopanorama.github.io/test/seafront/' + (ytile + ystart) + '_' + (xtile + xstart) + '.mp4');
@@ -46,12 +46,12 @@ function update() {
 function vidUpdate(x, y) {
     updateTiles = true;
     newx = xstart + x;
-    if ((newx) >= xmax || (newx < 0)) {
+    if ((newx) > (xmax-xtiles) || (newx < 0)) {
         updateTiles = false;
     }
 
     newy = ystart + y;
-    if ((newy) >= ymax || (newy < 0)) {
+    if ((newy) > (ymax-ytiles) || (newy < 0)) {
         updateTiles = false;
     }
 
