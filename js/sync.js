@@ -24,10 +24,12 @@ var loggingEnabled = false;
         });
         $("#xslider").change(function(){
             value = $("#xslider").val();
+            $("#xpos").text(value);
             setPosition(value,ypos);
             });
         $("#yslider").change(function(){
             value = $("#yslider").val();
+            $("#ypos").text(value);
             setPosition(xpos,value);
             });
         $(document).on("sjs:buffering", function() {
