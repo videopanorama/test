@@ -22,6 +22,14 @@ var loggingEnabled = false;
         $("#buttonResetVideo").click(function() {
             $(document).trigger("sjs:setCurrentTime", [0]);
         });
+        $("#xslider").change(function(){
+            value = $("#xslider").val();
+            setPosition(value,ypos);
+            });
+        $("#yslider").change(function(){
+            value = $("#yslider").val();
+            setPosition(xpos,value);
+            });
         $(document).on("sjs:buffering", function() {
             $("#bufferInfo").html("Not every player has buffered, yet. Pausing...");
         });
