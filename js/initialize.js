@@ -1,6 +1,4 @@
-template = 'test';
 
-//a general tileUpdate
 
 var xtilesWindow = 3;
 var ytilesWindow = 3;
@@ -13,14 +11,25 @@ var ytiles = 2;
 var xposTile = 3;
 var yposTile = 1;
 
-var xpos = xposTile;
-var ypos = yposTile;
+var xpos;
+var ypos;
+
+
 
 var xmax = 8;
 var ymax = 4;
 
 var time;
 
+function videoSrc(x,y) {
+    return 'https://videopanorama.github.io/test/seafront/' + y + '_' + x + '.mp4';
+}
+
+function bufferVideo(x,y){
+    v = document.createElement("video");
+    vjs = videojs(v);
+    vjs.src(videoSrc(x,y));
+}
 
 
 function tileUpdate(operation) {
@@ -35,7 +44,7 @@ function tileUpdate(operation) {
 
 function update() {
     var video = videojs(tile.toString());
-    video.src('seafront/' + (ytile + yposTile) + '_' + (xtile + xposTile) + '.mp4');
+    video.src(videoSrc(xtile+xposTile,ytile+yposTile));
 }
 
 //initialize
@@ -47,7 +56,7 @@ function initialize() {
 
 $(document).ready(function() {
     tileUpdate(initialize);
-    setPosition(xpos,ypos);
+    setPosition(xposTile,yposTile);
     changeTilesSrc(xposTile, yposTile);
 });
 

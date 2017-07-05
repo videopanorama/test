@@ -18,7 +18,7 @@
  */
 /* jshint -W083 */
 (function($) {
-    var checkBuffer = true; // flag whether to check for the video buffers
+    var checkBuffer = false; // flag whether to check for the video buffers
     var checkBufferInterval = 1000; // ms
     var receivedEventLoadeddata_waitTimeout = 5000; // ms
     var bufferInterval = 2; // s

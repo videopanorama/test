@@ -12,6 +12,7 @@ var loggingEnabled = false;
     $(document).ready(function() {
         $(document).on("sjs:allPlayersReady", function() {
             $("#bufferInfo").html("All players have been successfully initialized.");
+            $(document).trigger("sjs:play", []);
         });
         $("#buttonPlay").click(function() {
             $(document).trigger("sjs:play", []);
