@@ -44,13 +44,14 @@ function tileUpdate(operation) {
 
 function update() {
     var video = videojs(tile.toString());
+    video.poster("http://via.placeholder.com/390x390");
     video.src(videoSrc(xtile+xposTile,ytile+yposTile));
 }
 
 //initialize
 
 function initialize() {
-    $("#videos").append('<div class="col-sm-4 space-0 video"><video width="390" mediagroup="main" id="' + tile + '" class="video-js"></video></div>');
+    $("#videos").append('<div class="col-sm-4 space-0 video"><video width="390" height="390" mediagroup="main" id="' + tile + '" class="video-js"></video></div>');
     videojs(tile.toString(), { loop: true, loadingSpinner: false });
 }
 
